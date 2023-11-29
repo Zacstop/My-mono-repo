@@ -4,7 +4,7 @@ type ContainerProps = {
   $containerColor?: string;
 };
 
-export const SignInStyle = {
+export const SignUpStyle = {
   Container: styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@ export const SignInStyle = {
     gap: 30px;
   `,
 
-  SignIn: styled.div`
+  SignUp: styled.div`
     width: 470px;
     color: #02021D;
 
@@ -35,7 +35,7 @@ export const SignInStyle = {
     line-height: 56px; /* 116.667% */
   `,
   
-  SignInput: styled.div`
+  SignUpInput: styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -62,18 +62,6 @@ export const SignInStyle = {
     background: #FFF;
   `,
 
-  EmailPHInput: styled.input`
-    /* palceholder */
-    flex-shrink: 0;
-    color: #B7BAC9;
-
-    font-family: Rubik;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-  `,
-
   LoginButton: styled.div`
     display: flex;
     width: 470px;
@@ -92,9 +80,9 @@ export const SignInStyle = {
     line-height: 22px; /* 137.5% */
   `,
 
-  SignUp: styled.div`
+  SignUpp: styled.div`
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
   `,
 

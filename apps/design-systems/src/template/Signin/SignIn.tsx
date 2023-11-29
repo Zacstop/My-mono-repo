@@ -2,33 +2,12 @@
 
 import React from 'react';
 import { SignInStyle } from './SignIn.styles';
-import Logo  from '../assets/Icons/Logo-white.svg'
-import TwitterIcon  from '../assets/Icons/twitter.svg'
-import InstagramIcon  from '../assets/Icons/instagram.svg'
-import FacebookIcon  from '../assets/Icons/facebook.svg'
-import Image from 'next/image';
-
-
-// type User = {
-//   name: string;
-// };
-
-// type MenuList = {
-//   name: string;
-//   link: string;
-// }[];
+import Link from 'next/link';
 
 export interface SignInProps {
   title?: string;
-  // menuList?: MenuList;
-  // user?: User | null;
-  // onLogin?: () => void;
-  // onLogout?: () => void;
-  // join?: () => void;
-  // containerColor?: string;
 }
 
-// export const SignIn = ({ title, menuList = [], user, onLogin, onLogout, join, containerColor }: SignInProps) => {
 export const SignIn = ({ title }: SignInProps) => {
   return (
     <SignInStyle.Container>
@@ -42,7 +21,9 @@ export const SignIn = ({ title }: SignInProps) => {
           </SignInStyle.LoginButton>
           <SignInStyle.SignUp>
             New to Sopa
-            <SignInStyle.Creaccount>Create an account</SignInStyle.Creaccount>
+            <SignInStyle.Creaccount>
+              <Link href="/signup">Create an account</Link>
+            </SignInStyle.Creaccount>
           </SignInStyle.SignUp>
         </SignInStyle.InputContainer>
       </SignInStyle.SignInput>

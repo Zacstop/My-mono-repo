@@ -4,7 +4,8 @@ import React from "react";
 import styled from 'styled-components';
 import { NavigationBar } from "@/stories/NavigationBar";
 import { Footer } from "@/stories/Footer";
-import { SignIn } from "@/template/SignIn"
+import { SignIn } from "@/template/Signin/SignIn"
+import { SignUp } from "@/template/Signup/SignUp";
 
 const LoginLayout = styled.div`
   width: 100%;
@@ -28,9 +29,10 @@ function page() {
     <LoginLayout>
       <NavigationBar title={"asdf"}></NavigationBar>
       <LoginContainer>
-        <SignIn></SignIn>
+        <SignIn/>
+        {/* <SignUp/> */}
       </LoginContainer>
-      <Footer></Footer>
+      <Footer/>
     </LoginLayout>
   );
 }

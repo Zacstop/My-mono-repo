@@ -8,28 +8,32 @@ import InstagramIcon  from '../assets/Icons/instagram.svg'
 import FacebookIcon  from '../assets/Icons/facebook.svg'
 import Image from 'next/image';
 
+const DMLIST = [
+  {
+    title: 'Products',
+    items: ["Model 000", "Model 001", "Laces", "Masks", "No-show Socks", "Crew Socks", "Gift Cards"],
+  },
+  {
+    title: 'Support',
+    items: ["Help Center", "FAQs", "Order", "Order Status", "Returns & Exchanges", "Contact Us"],
+  },
+  {
+    title: 'Everything Else',
+    items: ["Community", "Why Sopa", "About", "Discount Program", "Sopa Blog", "Sopa Ambassadors"],
+  }
+]
 
-// type User = {
-//   name: string;
-// };
-
-// type MenuList = {
-//   name: string;
-//   link: string;
-// }[];
+type FooterList = {
+  title: string,
+  items: string[],
+};
 
 export interface FooterProps {
-  title?: string;
-  // menuList?: MenuList;
-  // user?: User | null;
-  // onLogin?: () => void;
-  // onLogout?: () => void;
-  // join?: () => void;
-  // containerColor?: string;
+  des?: string;
+  footerList?: FooterList[];
 }
 
-// export const Footer = ({ title, menuList = [], user, onLogin, onLogout, join, containerColor }: FooterProps) => {
-export const Footer = ({ title }: FooterProps) => {
+export const Footer = ({ des = "Stay informed about Sopa with our latest releases and founder news.", footerList = DMLIST }: FooterProps) => {
   return (
     <FooterStyle.Container>
       <FooterStyle.Wrapper>
@@ -39,8 +43,7 @@ export const Footer = ({ title }: FooterProps) => {
           </FooterStyle.MainLogo>
           <FooterStyle.Desc>
             <FooterStyle.ContactDes>
-              Stay informed about Sopa with our latest 
-              releases and founder news.
+              {des}
             </FooterStyle.ContactDes>
             <FooterStyle.ContactButton>
               Enter email here for updates
@@ -50,34 +53,14 @@ export const Footer = ({ title }: FooterProps) => {
 
         <FooterStyle.Link>
           <FooterStyle.Categories>
-            <FooterStyle.Lists>
-              <FooterStyle.CategorySubTitle>Products</FooterStyle.CategorySubTitle>
-              <FooterStyle.ListItems>Model 000</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Model 001</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Laces</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Masks</FooterStyle.ListItems>
-              <FooterStyle.ListItems>No-show Socks</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Crew Socks</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Gift Cards</FooterStyle.ListItems>
-            </FooterStyle.Lists>
-            <FooterStyle.Lists>
-              <FooterStyle.CategorySubTitle>Support</FooterStyle.CategorySubTitle>
-              <FooterStyle.ListItems>Help Center</FooterStyle.ListItems>
-              <FooterStyle.ListItems>FAQs</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Order</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Order Status</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Returns & Exchanges</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Contact Us</FooterStyle.ListItems>
-            </FooterStyle.Lists>
-            <FooterStyle.Lists>
-              <FooterStyle.CategorySubTitle>Everything Else</FooterStyle.CategorySubTitle>
-              <FooterStyle.ListItems>Community</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Why Sopa</FooterStyle.ListItems>
-              <FooterStyle.ListItems>About</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Discount Program</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Sopa Blog</FooterStyle.ListItems>
-              <FooterStyle.ListItems>Sopa Ambassadors</FooterStyle.ListItems>
-            </FooterStyle.Lists>
+            {footerList.map((list) => (
+              <FooterStyle.Lists key={list.title}>
+                <FooterStyle.CategorySubTitle>{list.title}</FooterStyle.CategorySubTitle>
+                {list.items.map(item => (
+                  <FooterStyle.ListItems key={item}>{item}</FooterStyle.ListItems>
+                ))}
+              </FooterStyle.Lists>
+            ))}
           </FooterStyle.Categories>
           <FooterStyle.SocialMedia>
             <FooterStyle.SNS>
@@ -86,7 +69,6 @@ export const Footer = ({ title }: FooterProps) => {
             </FooterStyle.SNS>
             <FooterStyle.SNS>
               <Image src={InstagramIcon} alt='insta'/>
-              {/* <FooterStyle.SNSIcon src={InstagramIcon}></FooterStyle.SNSIcon> */}
               <FooterStyle.SNSName>Instagram</FooterStyle.SNSName>
             </FooterStyle.SNS>
             <FooterStyle.SNS>

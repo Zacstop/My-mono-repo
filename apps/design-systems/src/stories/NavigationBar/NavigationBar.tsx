@@ -6,6 +6,7 @@ import MainLogo  from '../assets/Icons/Logo.svg'
 import User  from '../assets/Icons/user.svg'
 import Bag  from '../assets/Icons/shopping-bag.svg'
 import Image from 'next/image';
+import Link from 'next/link';
 
 // type User = {
 //   name: string;
@@ -40,7 +41,11 @@ export const NavigationBar = ({ title }: NavigationBarProps) => {
               <Image src={MainLogo} alt='mainlogo'/>
             </NavigationBarStyle.MainLogo>
             <NavigationBarStyle.Navis>
-              <NavigationBarStyle.NavisText>Men</NavigationBarStyle.NavisText>
+              <NavigationBarStyle.NavisText>
+                <Link href="/login">
+                  Men
+                </Link>
+              </NavigationBarStyle.NavisText>
               <NavigationBarStyle.NavisText>Women</NavigationBarStyle.NavisText>
               <NavigationBarStyle.NavisText>Accessories</NavigationBarStyle.NavisText>
               <NavigationBarStyle.NavisText>About</NavigationBarStyle.NavisText>

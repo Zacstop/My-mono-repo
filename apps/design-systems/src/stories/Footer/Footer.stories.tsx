@@ -9,30 +9,23 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<FooterProps>;
 
-export const primary: Story = {
+export const Primary: Story = {
   render: (args) => <Footer {...args} />,
   args: {
-    title: 'Woori Bank',
-    // user: {
-    //   name: 'kang san',
-    // },
-    // onLogout: () => console.log('logout'),
-    // onLogin: () => console.log('login'),
-    // join: () => console.log('join'),
-    // menuList: [
-    //   {
-    //     name: 'home',
-    //     link: '/',
-    //   },
-    //   {
-    //     name: 'about',
-    //     link: '/about',
-    //   },
-    //   {
-    //     name: 'contact',
-    //     link: '/contact',
-    //   },
-    // ],
-    // containerColor: 'var(--Blue-primary, #3e86f5)',
+    des: 'Stay informed about Sopa with our latest releases and founder news.',
+    footerList: [
+      {
+        title: 'Products',
+        items: ["Model 000", "Model 001", "Laces", "Masks", "No-show Socks", "Crew Socks", "Gift Cards"],
+      },
+      {
+        title: 'Support',
+        items: ["Help Center", "FAQs", "Order", "Order Status", "Returns & Exchanges", "Contact Us"],
+      },
+      {
+        title: 'Everything Else',
+        items: ["Community", "Why Sopa", "About", "Discount Program", "Sopa Blog", "Sopa Ambassadors"],
+      }
+    ],
   },
 };
