@@ -1,19 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Footer, FooterProps } from './FilledInput';
+import { FilledInput, FilledInputProps } from './FilledInput';
 
 const meta: Meta = {
-  title: 'components/modules/Footer',
-  component: Footer,
+  title: 'components/modules/FilledInput',
+  component: FilledInput,
 };
 
 export default meta;
-type Story = StoryObj<FooterProps>;
+type Story = StoryObj<FilledInputProps>;
 
-export const Primary: Story = {
-  render: (args) => <Footer {...args} />,
+export const primary: Story = {
+  render: (args) => <FilledInput {...args} />,
   args: {
     des: 'Stay informed about Sopa with our latest releases and founder news.',
-    footerList: [
+    FilledInputList: [
       {
         title: 'Products',
         items: ["Model 000", "Model 001", "Laces", "Masks", "No-show Socks", "Crew Socks", "Gift Cards"],

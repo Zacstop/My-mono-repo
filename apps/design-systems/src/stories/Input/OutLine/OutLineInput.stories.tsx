@@ -1,31 +1,17 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Footer, FooterProps } from './OutLineInput';
+import { OutlineInput, OutlineInputProps } from './OutlineInput';
 
 const meta: Meta = {
-  title: 'components/modules/Footer',
-  component: Footer,
+  title: 'components/modules/OutlineInput',
+  component: OutlineInput,
 };
 
 export default meta;
-type Story = StoryObj<FooterProps>;
+type Story = StoryObj<OutlineInputProps>;
 
-export const Primary: Story = {
-  render: (args) => <Footer {...args} />,
+export const primary: Story = {
+  render: (args) => <OutlineInput {...args} />,
   args: {
     des: 'Stay informed about Sopa with our latest releases and founder news.',
-    footerList: [
-      {
-        title: 'Products',
-        items: ["Model 000", "Model 001", "Laces", "Masks", "No-show Socks", "Crew Socks", "Gift Cards"],
-      },
-      {
-        title: 'Support',
-        items: ["Help Center", "FAQs", "Order", "Order Status", "Returns & Exchanges", "Contact Us"],
-      },
-      {
-        title: 'Everything Else',
-        items: ["Community", "Why Sopa", "About", "Discount Program", "Sopa Blog", "Sopa Ambassadors"],
-      }
-    ],
   },
 };

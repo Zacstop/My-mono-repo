@@ -1,1 +1,1 @@
-export * from './OutLineInput';
+export * from './OutlineInput';
