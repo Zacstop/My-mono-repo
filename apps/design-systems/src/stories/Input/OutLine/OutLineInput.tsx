@@ -5,23 +5,17 @@ import { OutlineInputStyle } from './OutlineInput.styles';
 import Logo  from '../assets/Icons/Logo-white.svg'
 import Image from 'next/image';
 
-
-type OutlineInputList = {
-  title: string,
-  items: string[],
-};
-
 export interface OutlineInputProps {
-  des?: string;
-  OutlineInputList?: OutlineInputList[];
+  placeholder: string;
 }
 
-export const OutlineInput = ({ des, OutlineInputList }: OutlineInputProps) => {
+export const OutlineInput = ({ placeholder }: OutlineInputProps) => {
   return (
     <OutlineInputStyle.Container>
-      <OutlineInputStyle.Wrapper>
-        OutlineInput
-      </OutlineInputStyle.Wrapper>
-    </OutlineInputStyle.Container>
+    <OutlineInputStyle.Wrapper>
+      <OutlineInputStyle.Input type='email' placeholder='' id='outline'/>
+      <OutlineInputStyle.Label id='outline'>{placeholder}</OutlineInputStyle.Label>
+    </OutlineInputStyle.Wrapper>
+  </OutlineInputStyle.Container>
   );
 };

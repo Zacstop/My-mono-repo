@@ -12,6 +12,6 @@ type Story = StoryObj<OutlineInputProps>;
 export const primary: Story = {
   render: (args) => <OutlineInput {...args} />,
   args: {
-    des: 'Stay informed about Sopa with our latest releases and founder news.',
+    placeholder: "Lorem ipsum"
   },
 };
